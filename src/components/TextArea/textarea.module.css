@@ -1,0 +1,11 @@
+.textarea{ 
+
+}
+
+.textarea textarea {
+    padding: 1vh;
+    width: 100%;
+    height: 10vh;
+    resize: none;
+    margin-bottom: 1vh;
+}

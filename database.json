@@ -1,0 +1,12 @@
+{
+    "salas": [
+        {
+            "id": 1,
+            "Descricao": "Aula de framework",
+            "Solicitante": "João",
+            "Sala": "Sala 1",
+            "DataInicio": "2019-10-10T08:00:00",
+            "DataFim": "2019-10-10T10:00:00"
+        }
+    ]
+}
