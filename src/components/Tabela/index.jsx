@@ -32,14 +32,18 @@ export default function Tabela() {
                         <th>Início</th>
                         <th>Fim</th>
                     </tr>
-                    <tr>
-                        <td>Aula de Frameworks</td>
-                        <td>José da Silva</td>
-                        <td>Bloco A - Lab. de Informática</td>
-                        <td>25/10/2023 às 19:00:00</td>
-                        <td>25/10/2023 às 20:00:00</td>
-                    </tr>
                 </thead>
+                <tbody>
+                    {salas.map((salas) => (
+                    <tr key={salas.id}>
+                        <td>{salas.descricao}</td>
+                        <td>{salas.solicitante}</td>
+                        <td>{salas.sala}</td>
+                        <td>{salas.inicio}</td>
+                        <td>{salas.fim}</td>
+                    </tr>
+                    ))}
+                </tbody>
             </table>
         </div>
     )
