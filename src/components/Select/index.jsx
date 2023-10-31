@@ -1,14 +1,18 @@
 import styles from './select.module.css'
 
-export default function Select(props) {
+export default function Select({ name, options, value}) {
     return (
         <div className={styles.select}>
             <select
-                id={props.name}
-                value={props.value}
-                onChange={props.onChange}
+                id={name}
+                name={name}
             >
-                <option value="" disabled>{props.placeholder}</option>
+                <option>Selecione uma opção</option>
+                {options.map((option) => (
+                    <option value={option.id} key={option.id}>
+                        {option.name}
+                    </option>
+                ))}
             </select>
         </div>
     )

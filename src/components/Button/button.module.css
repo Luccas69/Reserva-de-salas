@@ -2,13 +2,14 @@
     width: 30%;
     height: 5vh;
     background-color: rgb(34, 34, 168);
-    color: white;
+    color: #FFFFFF;
     font-size: 18px;
     font-weight: 400;
     border: none;
 }
 
 .container {
+    color: #FFFFFF;
     display: flex;
     justify-content: flex-end;
 }

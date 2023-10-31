@@ -1,17 +1,9 @@
 import styles from './button.module.css'
 
-export default function Button(props) {
+export default function Button({ text }) {
     return (
         <div className={styles.container}>
-            <button className={styles.button}
-                type={props.type}
-                id={props.name}
-                placeholder={props.placeholder}
-                value={props.value}
-                onChange={props.onChange}
-            >
-                {props.text}
-            </button>
+            <button type="submit" className={styles.button}>{text}</button>
         </div>
     )
 }

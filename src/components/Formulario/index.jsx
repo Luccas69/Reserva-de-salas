@@ -5,10 +5,68 @@ import styles from './form.module.css'
 import Select from '../Select'
 import Checkbox from '../Checkbox'
 import Button from '../Button'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
 
-export default function Formulario() {
+export default function Formulario({ btnText }) {
+
+    const [termos, setTermos] = useState(false)
+
+    const [categories, setCategories] = useState([])
+
+    const [salas, setSalas] = useState({
+        descricao: '',
+        solicitante: '',
+        sala: '',
+        inicio: '',
+        fim: '',
+    })
+
+    useEffect(() => {
+        axios.get('http://localhost:3001/categories')
+            .then((response) => {
+                setCategories(response.data)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }, [])
+
+    function inserirSala(e) {
+        e.preventDefault()
+        console.log(salas)
+
+        if (!termos) {
+            console.log('Aceite os termos')
+            return;
+        }
+
+        function limparCampos() {
+            setSalas({
+                descricao: '',
+                solicitante: '',
+                sala: '',
+                inicio: '',
+                fim: '',
+            })
+        }
+
+        axios.post('http://localhost:3001/salas', salas)
+            .then((response) => {
+                console.log(response.data)
+                limparCampos();
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }
+
+    function aceitarTermos(e) {
+        setTermos(e.target.checked)
+    }
+
     return (
-        <form className={styles.form}>
+        <form onSubmit={e => inserirSala(e)} className={styles.form}>
             <h1>Reservar Sala</h1>
             <Label
                 htmlFor="nome"
@@ -18,8 +76,8 @@ export default function Formulario() {
                 type="text"
                 name="Descrição"
                 placeholder="Descrição"
-                value=""
-                onChange=""
+                value={salas.descricao}
+                onChange={(e) => setSalas({ ...salas, descricao: e.target.value })}
             />
             <Label
                 htmlFor="nome"
@@ -29,18 +87,17 @@ export default function Formulario() {
                 type="text"
                 name="Solicitante"
                 placeholder="Solicitante"
-                value=""
-                onChange=""
+                value={salas.solicitante}
+                onChange={(e) => setSalas({ ...salas, solicitante: e.target.value })}
             />
             <Label
                 htmlFor="nome"
                 text="Sala"
             />
             <Select
-                name="Sala"
-                placeholder="Sala"
-                value=""
-                onChange=""
+                name="category_id"
+                text="Selecione uma sala"
+                options={categories}
             />
             <Label
                 htmlFor="nome"
@@ -50,8 +107,8 @@ export default function Formulario() {
                 type="datetime-local"
                 name="data-horario"
                 placeholder=""
-                value=""
-                onChange=""
+                value={salas.inicio}
+                onChange={(e) => setSalas({ ...salas, inicio: e.target.value })}
             />
             <Label
                 htmlFor="nome"
@@ -61,24 +118,19 @@ export default function Formulario() {
                 type="datetime-local"
                 name="Fim"
                 placeholder=""
-                value=""
-                onChange=""
+                value={salas.fim}
+                onChange={(e) => setSalas({ ...salas, fim: e.target.value })}
             />
             <Checkbox
                 type="checkbox"
                 name="checkbox"
                 value=""
-                onChange=""
+                onChange={aceitarTermos}
                 htmlFor="check"
                 text="concordo com os termos?"
             />
             <Button
-                type="submit"
-                name="submit"
-                value="Enviar"
-                onChange=""
-                text="Reservar Sala"
-            />
+                text={btnText} />
         </form>
     )
 }

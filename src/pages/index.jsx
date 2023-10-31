@@ -9,7 +9,7 @@ export default function Home() {
     <div>
       <Cabecalho />
       <div className={styles.body}>
-        <Formulario />
+        <Formulario btnText="Reservar Sala" />
         <Tabela />
       </div>
     </div>

@@ -1,12 +1,22 @@
 {
-    "salas": [
-        {
-            "id": 1,
-            "Descricao": "Aula de framework",
-            "Solicitante": "João",
-            "Sala": "Sala 1",
-            "DataInicio": "2019-10-10T08:00:00",
-            "DataFim": "2019-10-10T10:00:00"
-        }
-    ]
+  "salas": [
+    {
+      "descricao": "ksjlkdsjksj",
+      "solicitante": "ksjksdjskj",
+      "sala": "",
+      "inicio": "2023-10-30T22:27",
+      "fim": "2023-11-11T22:27",
+      "id": 1
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Bloco A - Lab. de Informática 1"
+    },
+    {
+      "id": 2,
+      "name": "Bloco A - Lab. de Informática 2"
+    }
+  ]
 }
