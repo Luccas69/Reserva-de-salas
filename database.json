@@ -1,11 +1,11 @@
 {
   "salas": [
     {
-      "descricao": "ksjlkdsjksj",
-      "solicitante": "ksjksdjskj",
+      "descricao": "Aula de Frameworks",
+      "solicitante": "José da Silva",
       "sala": "",
-      "inicio": "2023-10-30T22:27",
-      "fim": "2023-11-11T22:27",
+      "inicio": "2023-10-25T19:00",
+      "fim": "2023-10-25T20:00",
       "id": 1
     }
   ],
@@ -17,6 +17,10 @@
     {
       "id": 2,
       "name": "Bloco A - Lab. de Informática 2"
+    },
+    {
+      "id": 3,
+      "name": "Bloco A - Lab. de Informática 3"
     }
   ]
 }
