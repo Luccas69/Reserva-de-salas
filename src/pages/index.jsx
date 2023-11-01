@@ -8,10 +8,14 @@ export default function Home() {
   return (
     <div>
       <Cabecalho />
-      <div className={styles.body}>
-        <Formulario btnText="Reservar Sala" />
-        <Tabela />
-      </div>
+      <div className={styles.home}>
+        <div className={styles.form}>
+          <Formulario btnText="Reservar Sala" />
+        </div>
+        <div className={styles.tabela}>
+          <Tabela />
+        </div>
+      </div >
     </div>
   )
 }
