@@ -7,7 +7,7 @@ import Checkbox from '../Checkbox'
 import Button from '../Button'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-import Mensagem from '../Mensagem'
+
 
 export default function Formulario({ btnText }) {
 
@@ -66,11 +66,12 @@ export default function Formulario({ btnText }) {
         setTermos(e.target.checked)
     }
 
+
     return (
         <div>
             <form onSubmit={e => inserirSala(e)} className={styles.form}>
                 <h1>Reservar Sala</h1>
-                <Mensagem msg="Alguma mensagem"/>
+
                 <Label
                     htmlFor="nome"
                     text="Descrição"
