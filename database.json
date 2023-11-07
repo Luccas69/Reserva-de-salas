@@ -1,28 +1,6 @@
 {
   "salas": [
     {
-      "descricao": "aula de aula",
-      "solicitante": "Luccas",
-      "inicio": "2002-12-26T22:00",
-      "fim": "2002-12-26T23:00",
-      "category": {
-        "id": "1",
-        "name": "Bloco A - Lab. de Informática 1"
-      },
-      "id": 3
-    },
-    {
-      "descricao": "aula de frameword",
-      "solicitante": "Luccs",
-      "inicio": "2200-12-26T22:00",
-      "fim": "2200-12-26T23:00",
-      "category": {
-        "id": "2",
-        "name": "Bloco A - Lab. de Informática 2"
-      },
-      "id": 4
-    },
-    {
       "descricao": "Aula de Frameworks",
       "solicitante": "José da Silva",
       "inicio": "2023-10-25T19:00",
@@ -34,15 +12,37 @@
       "id": 5
     },
     {
-      "descricao": "lskldkslkl",
-      "solicitante": "lksldkslkslkl",
-      "inicio": "2000-12-26T23:00",
-      "fim": "2000-12-26T23:00",
+      "descricao": "Aula de Frameworks",
+      "solicitante": "José da Silva",
+      "inicio": "2023-10-25T19:00",
+      "fim": "2023-10-25T20:00",
+      "category": {
+        "id": "1",
+        "name": "Bloco A - Lab. de Informática 1"
+      },
+      "id": 6
+    },
+    {
+      "descricao": "Lusks",
+      "solicitante": "kjssjk",
+      "inicio": "2222-02-22T22:22",
+      "fim": "2222-02-22T22:22",
+      "category": {
+        "id": "1",
+        "name": "Bloco A - Lab. de Informática 1"
+      },
+      "id": 7
+    },
+    {
+      "descricao": "sss",
+      "solicitante": "sss",
+      "inicio": "2023-11-06T22:15",
+      "fim": "2023-11-06T22:15",
       "category": {
         "id": "2",
         "name": "Bloco A - Lab. de Informática 2"
       },
-      "id": 6
+      "id": 8
     }
   ],
   "categories": [

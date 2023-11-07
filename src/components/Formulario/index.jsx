@@ -7,6 +7,7 @@ import Checkbox from '../Checkbox'
 import Button from '../Button'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import Message from '../Mensagem'
 
 
 export default function Formulario({ btnText }) {
@@ -21,6 +22,8 @@ export default function Formulario({ btnText }) {
         inicio: '',
         fim: '',
     })
+
+    const [message, setMessage] = useState(null)
 
     useEffect(() => {
         axios.get('http://localhost:3001/categories')
@@ -47,6 +50,7 @@ export default function Formulario({ btnText }) {
         console.log(salas)
 
         if (!termos) {
+            setMessage({ type: 'error', text: 'Aceite os termos' });
             console.log('Aceite os termos')
             return;
         }
@@ -62,10 +66,12 @@ export default function Formulario({ btnText }) {
 
         axios.post('http://localhost:3001/salas', salas)
             .then((response) => {
+                setMessage({ type: 'success', text: 'Operação bem-sucedida!' });
                 console.log(response.data)
                 limparCampos();
             })
             .catch((err) => {
+                setMessage({ type: 'error', text: 'Ocorreu um erro ao processar sua solicitação.' });
                 console.log(err)
             })
 
@@ -80,6 +86,9 @@ export default function Formulario({ btnText }) {
         <div>
             <form onSubmit={e => inserirSala(e)} className={styles.form}>
                 <h1>Reservar Sala</h1>
+
+                {message && (
+                    <Message type={message.type} text={message.text} />)}
 
                 <Label
                     htmlFor="nome"
