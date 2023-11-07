@@ -18,7 +18,6 @@ export default function Formulario({ btnText }) {
     const [salas, setSalas] = useState({
         descricao: '',
         solicitante: '',
-        sala: '',
         inicio: '',
         fim: '',
     })
@@ -33,6 +32,16 @@ export default function Formulario({ btnText }) {
             })
     }, [])
 
+    function handleCategory(e) {
+        setSalas({
+            ...salas,
+            category: {
+                id: e.target.value,
+                name: e.target.options[e.target.selectedIndex].text
+            }
+        })
+    }
+
     function inserirSala(e) {
         e.preventDefault()
         console.log(salas)
@@ -46,7 +55,6 @@ export default function Formulario({ btnText }) {
             setSalas({
                 descricao: '',
                 solicitante: '',
-                sala: '',
                 inicio: '',
                 fim: '',
             })
@@ -60,6 +68,7 @@ export default function Formulario({ btnText }) {
             .catch((err) => {
                 console.log(err)
             })
+
     }
 
     function aceitarTermos(e) {
@@ -102,6 +111,8 @@ export default function Formulario({ btnText }) {
                     name="category_id"
                     text="Selecione uma sala"
                     options={categories}
+                    value={salas.category?.id}
+                    onChange={handleCategory}
                 />
                 <Label
                     htmlFor="nome"

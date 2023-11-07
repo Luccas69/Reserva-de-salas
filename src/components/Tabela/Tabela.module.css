@@ -1,5 +1,5 @@
 .container {
-    margin-top: 1.1rem;
+    margin-top: 1vh;
     display: flex;
     text-align: center;
     align-items: center;
@@ -7,7 +7,7 @@
 }
 
 .title {
-    margin-top: 2rem;
+    margin-top: 2vh;
     margin-left: 1rem;
     font-size: 15px;
     display: flex;

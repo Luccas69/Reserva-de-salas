@@ -31,6 +31,7 @@ export default function Tabela() {
     return (
         <>
             <div className={styles.title}>
+                <img src="date.png" alt="date" />
                 <h1>
                     Reservas realizadas: {salas.length}
                 </h1>
@@ -51,7 +52,7 @@ export default function Tabela() {
                             <tr key={salas.id}>
                                 <td>{salas.descricao}</td>
                                 <td>{salas.solicitante}</td>
-                                <td>{salas.sala}</td>
+                                <td>{salas.category?.name}</td>
                                 <td>{formatarData(salas.inicio)}</td>
                                 <td>{formatarData(salas.fim)}</td>
                             </tr>
