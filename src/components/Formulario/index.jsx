@@ -66,12 +66,18 @@ export default function Formulario({ btnText }) {
 
         axios.post('http://localhost:3001/salas', salas)
             .then((response) => {
-                setMessage({ type: 'success', text: 'Operação bem-sucedida!' });
+                setMessage({ type: 'success', text: 'Agendamento realizado com sucesso!' });
                 console.log(response.data)
                 limparCampos();
+
+                setTimeout(() => {
+                    window.location.reload();
+                }, 3000);
+
+
             })
             .catch((err) => {
-                setMessage({ type: 'error', text: 'Ocorreu um erro ao processar sua solicitação.' });
+                setMessage({ type: 'error', text: 'Ocorreu um erro no seu agendamento.' });
                 console.log(err)
             })
 

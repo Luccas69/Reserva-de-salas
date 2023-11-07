@@ -23,21 +23,21 @@
       "id": 6
     },
     {
-      "descricao": "Lusks",
-      "solicitante": "kjssjk",
-      "inicio": "2222-02-22T22:22",
-      "fim": "2222-02-22T22:22",
+      "descricao": "Aula de Frameworks",
+      "solicitante": "José da Silva",
+      "inicio": "2023-10-25T19:00",
+      "fim": "2023-10-25T20:00",
       "category": {
-        "id": "1",
-        "name": "Bloco A - Lab. de Informática 1"
+        "id": "2",
+        "name": "Bloco A - Lab. de Informática 2"
       },
       "id": 7
     },
     {
-      "descricao": "sss",
-      "solicitante": "sss",
-      "inicio": "2023-11-06T22:15",
-      "fim": "2023-11-06T22:15",
+      "descricao": "Aula de Frameworks ",
+      "solicitante": "José da Silva",
+      "inicio": "2023-11-06T19:00",
+      "fim": "2023-11-06T20:00",
       "category": {
         "id": "2",
         "name": "Bloco A - Lab. de Informática 2"
