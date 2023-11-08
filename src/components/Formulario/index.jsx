@@ -25,6 +25,8 @@ export default function Formulario({ btnText }) {
 
     const [message, setMessage] = useState(null)
 
+    const [formReady, setFormReady] = useState(false)
+
     useEffect(() => {
         axios.get('http://localhost:3001/categories')
             .then((response) => {
@@ -49,9 +51,20 @@ export default function Formulario({ btnText }) {
         e.preventDefault()
         console.log(salas)
 
+        if (!isFormReady()) {
+            setMessage({ type: 'error', text: 'Preencha todos os campos e aceite os termos.' });
+            return;
+        }
+
         if (!termos) {
             setMessage({ type: 'error', text: 'Aceite os termos' });
             console.log('Aceite os termos')
+            return;
+        }
+
+        if (salas.inicio > salas.fim) {
+            setMessage({ type: 'error', text: 'A data de início não pode ser maior que a data de fim.' });
+            setSalas((prevSalas) => ({ ...prevSalas, inicio: '', fim: '' })); // Limpa as datas
             return;
         }
 
@@ -87,6 +100,15 @@ export default function Formulario({ btnText }) {
         setTermos(e.target.checked)
     }
 
+    function isFormReady() {
+        return (
+            salas.descricao.trim() !== '' &&
+            salas.solicitante.trim() !== '' &&
+            salas.inicio.trim() !== '' &&
+            salas.fim.trim() !== '' &&
+            termos
+        )
+    }
 
     return (
         <div>

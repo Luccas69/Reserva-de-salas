@@ -12,6 +12,7 @@ export default function Home() {
         <div className={styles.form}>
           <Formulario btnText="Reservar Sala" />
         </div>
+        <hr/>
         <div className={styles.tabela}>
           <Tabela />
         </div>
